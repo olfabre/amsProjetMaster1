@@ -85,7 +85,7 @@ Boutons pour :
 - Sauvegarder temporairement.  
 - Arrêter et sauvegarder le modèle final.  
   
-Interface pour la sauvegarde :  
+##Interface pour la sauvegarde :  
   
 - Option pour sauvegarder le modèle localement ou sur un dépôt GitHub.
 - Champs pour les informations de dépôt GitHub (URL, identifiants, etc.).
