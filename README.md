@@ -1,5 +1,5 @@
-L'application est créée en python.  
-Il y a deux modes d'utilisations :   
+# L'application est créée en python.  
+## Il y a deux modes d'utilisations :   
 - utilisation des modèles pour génerer des caractères ASCII  
 - création et sauvegarde de modèles  
   
