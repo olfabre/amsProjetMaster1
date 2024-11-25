@@ -14,7 +14,7 @@ set LOG_OUT=logs\%JOB_NAME%_out.log
 set LOG_ERR=logs\%JOB_NAME%_err.log
 
 :: Lancer le script Python et rediriger les sorties
-echo Lancement de artGen.py...
+echo Lancement de artGen.py...p
 python artGen.py > %LOG_OUT% 2> %LOG_ERR%
 
 :: Afficher un message une fois terminé
