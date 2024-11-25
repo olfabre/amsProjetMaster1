@@ -123,7 +123,7 @@ def training(n_epochs, file, chunk_count=10):
     start = time.time()
     loss_avg = 0
     best_loss = float("inf")
-    print_every = n_epochs // 10000
+    print_every = n_epochs // 100
 
     for epoch in range(1, n_epochs + 1):
         losses = []
