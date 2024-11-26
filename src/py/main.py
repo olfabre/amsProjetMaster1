@@ -1,6 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
 from PyQt6.QtGui import QIcon
 from menu_bar import create_menu_bar
+from pages.training import TrainingPage
+from pages.usage import UsagePage
 
 
 class MainWindow(QMainWindow):
@@ -11,31 +13,38 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("PassWordGenius")
         self.setGeometry(100, 100, 400, 300)
         self.setWindowIcon(QIcon("icone.png"))
-        self.show_training_page()
+        self.show_welcome_message()
+
 
          # Menu
         self.setMenuBar(create_menu_bar(self))
 
-    def show_training_page(self):
-        """Affiche la page d'entrainement."""
-        training_widget = QWidget()
-        layout = QVBoxLayout()
-        label = QLabel("Bienvenue sur la page d'Entrainement")
-        layout.addWidget(label)
-        training_widget.setLayout(layout)
+    def show_welcome_message(self):
+        """
+        Affiche un message d'accueil sur la page d'ouverture.
+        """
+        # Créer un widget central avec un texte
+        welcome_widget = QWidget()
+        welcome_layout = QVBoxLayout()
+        welcome_widget.setLayout(welcome_layout)
 
-        # Définir le widget central
+        # Ajouter un label avec le texte d'accueil
+        welcome_label = QLabel("Bienvenue sur PassWordGenius !\n\n"
+                               "Choisissez une action dans le menu pour commencer.")
+        welcome_label.setStyleSheet("font-size: 16px; text-align: center;")
+
+        # Ajouter le label au layout
+        welcome_layout.addWidget(welcome_label)
+
+        # Définir ce widget comme le contenu central
+        self.setCentralWidget(welcome_widget)
+
+    def show_training_page(self):
+        training_widget = TrainingPage()
         self.setCentralWidget(training_widget)
 
     def show_usage_page(self):
-        """Affiche la page d'utilisation."""
-        usage_widget = QWidget()
-        layout = QVBoxLayout()
-        label = QLabel("Bienvenue sur la page d'Utilisation")
-        layout.addWidget(label)
-        usage_widget.setLayout(layout)
-
-        # Définir le widget central
+        usage_widget = UsagePage()
         self.setCentralWidget(usage_widget)
 
     def center_button(self):
